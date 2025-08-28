@@ -5,67 +5,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Portfolio</title>
+<link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
     <header id="Top">
-        <h1>My portfolio</h1>
-        <nav id="options">
-            <a>Home</a>
-            <a>About</a>
-            <a>Projects</a>
-            <a>Contact</a>
-            
-        </nav>
+        <div id="heading">
+            <h1>My portfolio</h1>
+        </div>
+        <div id="options">
+            <nav>
+                <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        
+       
     </header>
     <main>
         <section id="home">
-            <h2>Hi, Im Sravan Reddy , Welcome to my portfolio website ,Scroll Down to know more about me</h2>
+            <h2>Hi, Im Sravan Reddy , Welcome to my portfolio website</h2>
         </section>
         <section id="about">
             <p>I'm a passionate software developer who enjoys creating innovative and user-friendly solutions through code. 
                 My goal is to build applications that make life easier and more engaging.</p>
         </section>
-        <section id="experience">
-           <div>
-            <h1>
-
-            </h1>
-            <p>
+        <section id="skills">
+            <ul>
+                <li><b>Web Technologies :</b> HTML , CSS , React, Spring Boot</li>
+                <li><b>Programming Languages </b>Java , Python , Java Script </li>
+                <li><b>Tools & Platforms</b> VS Code , Git , Github , Docker </li>
+            </ul>
+        </section>
+        <div class="projects-wrapper">
+            <section id="projects">
+              <div class="projects-container">
+          
+              
+                <div class="project">
+                  <div class="project-image">
+                    <img src="images/lms.png" alt="Screenshot of the Java Learning Management System">
+                  </div>
+                  <div class="project-info">
+                    <h2>Learning Management System Using Java</h2>
+                    <p>
+                      Designed and implemented a complete LMS using Java. Integrated multiple Java files for seamless functionality.
+                      Tracks student information, marks, attendance, and subjects. Includes trainer details such as experience,
+                      salary, and number of classes.
+                    </p>
+                  </div>
+                </div>
+          
                 
-            </p>
-           </div>
-        </section>
-        <section id="projects">
-            <div id="project">
-                <div>
-                    <img src="">
-                    <h1>
-
-                    </h1>
-                </div>
-                <div id="porject-info">
+                <div class="project">
+                  <div class="project-image">
+                    <img src="images/recipe-site.png" alt="Screenshot of the Food Recipe site">
+                  </div>
+                  <div class="project-info">
+                    <h2>Food Recipe Site</h2>
                     <p>
-                        
+                      Developed a responsive website that displays recipes from around the world. Implemented clean, interactive,
+                      and user-friendly design layouts. Focused on accessibility, interactivity, and cross-browser compatibility.
                     </p>
+                  </div>
                 </div>
 
-                <div>
-                    <img src="">
-                    <h1>
-                        
-                    </h1>
-                </div>
-                <div id="porject-info">
-                    <p>
-                        
-                    </p>
-                </div>
-
-            </div>
-        </section>
+                <div class="project">
+                    <div class="project-image">
+                      <img src="images/recipe-site.png" alt="Screenshot of the Food Recipe site">
+                    </div>
+                    <div class="project-info">
+                      <h2>Child Malnutrition prediction using Machine Learning and Python</h2>
+                      <p>
+                        Collected and cleaned datasets related to child health and nutrition. Developed predictive models to assess the likelihood
+                        of malnutrition. Identified correlations between malnutrition risks and disease occurrence.
+                      </p>
+                    </div>
+                  </div>
+            
+          
+              </div>
+            </section>
+          </div>
+          
     </main>
     <footer>
         <div id="contact">
+            <p>WhatsApp no- 8309098575</p>
+            <p>Email - hisravan23@gmail.com</p>
             
         </div>
     </footer>
