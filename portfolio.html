@@ -1,50 +1,83 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-<link rel="stylesheet" href="portfolio.css">
+  <title>My Portfolio</title>
+  <link id="mode" rel="stylesheet" href="portfolio.css">
+
+  <link rel="icon" type="image/png" href="suitcase.png">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
+
 <body>
+  <script>
+   function clicked() {
+    let c = document.getElementById("theme-toggle");
+    let v = document.getElementById("mode");
+
+    if (c.textContent.trim() === "Dark Mode") {
+      c.textContent = "Light Mode";
+      v.href = "light.css";
+    } else {
+      c.textContent = "Dark Mode";
+      v.href = "portfolio.css";
+    }
+  }
+
+
+
+
+  </script>
     <header id="Top">
+      <button id="theme-toggle" onclick="clicked()">Dark Mode</button>
         <div id="heading">
             <h1>My portfolio</h1>
         </div>
         <div id="options">
             <nav>
                 <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
-        
-       
     </header>
+
     <main>
-        <section id="home">
+       
+        <section id="home" data-aos-easing="linear"
+        data-aos-duration="1500">
             <h2>Hi, Im Sravan Reddy , Welcome to my portfolio website</h2>
         </section>
-        <section id="about">
+
+      
+        <section id="about" data-aos-easing="linear"
+        data-aos-duration="1500">
             <h2>I'm a passionate software developer who enjoys creating innovative and user-friendly solutions through code. 
                 My goal is to build applications that make life easier and more engaging.</h2>
         </section>
-        <section id="skills">
+
+        
+        <section id="skills" data-aos-easing="linear"
+        data-aos-duration="1500">
             <ul>
                 <li><b>Web Technologies :</b> HTML , CSS , React, Spring Boot</li>
                 <li><b>Programming Languages </b>Java , Python , Java Script </li>
                 <li><b>Tools & Platforms</b> VS Code , Git , Github , Docker </li>
             </ul>
         </section>
+
         <div class="projects-wrapper">
-            <section id="projects">
+            <section id="projects" 
+                    >
               <div class="projects-container">
-          
-              
-                <div class="project">
+
+                <div class="project"
+                data-aos="flip-left" 
+                data-aos-easing="ease-out-cubic" 
+                data-aos-duration="2000">
                   <div class="project-image">
                     <img src="pexels-mikhail-nilov-6981024.jpg" alt="Screenshot of the Java Learning Management System">
                   </div>
@@ -57,9 +90,11 @@
                     </p>
                   </div>
                 </div>
-          
-                
-                <div class="project">
+
+                <div class="project"
+                data-aos="flip-left" 
+                data-aos-easing="ease-out-cubic" 
+                data-aos-duration="2000">
                   <div class="project-image">
                     <img src="pexels-ella-olsson-572949-1640772.jpg" alt="Screenshot of the Food Recipe site">
                   </div>
@@ -72,22 +107,20 @@
                   </div>
                 </div>
 
-               
-          
               </div>
             </section>
-          </div>
-          
+        </div>
     </main>
+
     <footer>
-        
-            <p id="contact">WhatsApp no- 8309098575</p>
-            <p id="email">Email - hisravan23@gmail.com</p>
-            
-       
+        <p id="contact">WhatsApp no- 8309098575</p>
+        <p id="email">Email - hisravan23@gmail.com</p>
     </footer>
 
-
+   
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
-

@@ -19,13 +19,15 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9); 
+  background: rgba(69, 64, 64, 0.85);
   padding: 15px 40px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #heading h1 {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
   margin: 0;
   font-size: 1.5rem;
 }
@@ -38,13 +40,14 @@ header {
 
 #options a {
   text-decoration: none;
-  color: #333;
+  color:white;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 #options a:hover {
-  color: #0073e6;
+  color: #ffffff;
+  transform: scale(1.05) translateY(-5px);
 }
 
 main {
@@ -54,8 +57,20 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(69, 64, 64, 0.85);
   border-radius: 10px;
+}
+#theme-toggle{
+  padding: 10px;
+  width: 100px;   
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #575859;
+  color: white;
+  transition: background 0.3s;
+  border: 1px solid white;
 }
 
 section {
@@ -68,14 +83,14 @@ section {
   text-align: center;
   font-size: 2rem;
   line-height: 1.5;
-  color: #555; 
+  color: #bcb8b8; 
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #home h2:hover,
 #about h2:hover {
-  transform: translateY(-8px);
-  color: #000;
+  transform: translateY(-18px);
+  color: #ffffff;
 }
 
 p {
@@ -87,9 +102,10 @@ ul {
 }
 
 #skills {
+  color: #bcb8b8;
   text-align: center;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(156, 154, 154);
   margin-left: 30px;
   font-size: 20px;
   border-radius: 10px;
@@ -99,6 +115,7 @@ ul {
 #skills:hover {
   transform: scale(1.05) translateY(-10px); 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
+  color: #ffffff;
 }
 
 .projects-container {
@@ -119,7 +136,7 @@ ul {
 }
 
 .project:hover {
-  transform: scale(1.05) translateY(-10px); 
+  transform: scale(1.05) translateY(-16px); 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);  
 }
 
@@ -146,16 +163,18 @@ ul {
 }
 
 footer {
-  background: rgba(255, 255, 255, 0.9);
+  background:rgba(69, 64, 64, 0.85);
   padding: 20px 40px;
   display: flex;
   justify-content: space-between; 
   align-items: center;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid #ddd;
+  border-top: 1px solid ;
+
 }
 
 footer p {
+  color: white;
   font-size: 25px;
   margin: 0;
   font-weight: bold;
