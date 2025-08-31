@@ -187,3 +187,74 @@ footer p {
 #email {
   text-align: right;
 }
+
+
+#contact {
+  margin-top: 50px;
+  padding: 30px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #f5f5f5;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contact label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ddd;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2a2a2a;
+  color: #f5f5f5;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border: 1px solid #6c63ff;
+  box-shadow: 0 0 6px rgba(108,99,255,0.5);
+}
+
+#contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact button {
+  align-self: flex-start;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #6c63ff;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#contact button:hover {
+  background: #5750d6;
+  transform: translateY(-3px);
+}
+

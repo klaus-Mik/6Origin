@@ -25,102 +25,141 @@
     }
   }
 
+  // Contact form validation
+  function validateForm(event) {
+    event.preventDefault(); // prevent form submit
 
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let errorMsg = "";
 
+    if (name === "") {
+      errorMsg += "Name is required.\n";
+    }
 
+    if (email === "") {
+      errorMsg += "Email is required.\n";
+    } else {
+      // simple email regex
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        errorMsg += "Invalid email format.\n";
+      }
+    }
+
+    if (message === "") {
+      errorMsg += "Message is required.\n";
+    }
+
+    if (errorMsg) {
+      alert(errorMsg);
+    } else {
+      alert("Form submitted successfully!");
+      document.getElementById("contact-form").reset();
+    }
+  }
   </script>
-    <header id="Top">
-      <button id="theme-toggle" onclick="clicked()">Dark Mode</button>
-        <div id="heading">
-            <h1>My portfolio</h1>
+
+  <header id="Top">
+    <button id="theme-toggle" onclick="clicked()">Dark Mode</button>
+    <div id="heading">
+      <h1>My portfolio</h1>
+    </div>
+    <div id="options">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" data-aos-easing="linear" data-aos-duration="1500">
+      <h2>Hi, Im Sravan Reddy , Welcome to my portfolio website</h2>
+    </section>
+
+    <section id="about" data-aos-easing="linear" data-aos-duration="1500">
+      <h2>I'm a passionate software developer who enjoys creating innovative and user-friendly solutions through code. 
+        My goal is to build applications that make life easier and more engaging.</h2>
+    </section>
+
+    <section id="skills" data-aos-easing="linear" data-aos-duration="1500">
+      <ul>
+        <li><b>Web Technologies :</b> HTML , CSS , React, Spring Boot</li>
+        <li><b>Programming Languages </b>Java , Python , Java Script </li>
+        <li><b>Tools & Platforms</b> VS Code , Git , Github , Docker </li>
+      </ul>
+    </section>
+
+    <div class="projects-wrapper">
+      <section id="projects">
+        <div class="projects-container">
+          <div class="project"
+              data-aos="flip-left" 
+              data-aos-easing="ease-out-cubic" 
+              data-aos-duration="2000">
+            <div class="project-image">
+              <img src="pexels-mikhail-nilov-6981024.jpg" alt="Screenshot of the Java Learning Management System">
+            </div>
+            <div class="project-info">
+              <h2>Learning Management System Using Java</h2>
+              <p>
+                Designed and implemented a complete LMS using Java. Integrated multiple Java files for seamless functionality.
+                Tracks student information, marks, attendance, and subjects. Includes trainer details such as experience,
+                salary, and number of classes.
+              </p>
+            </div>
+          </div>
+
+          <div class="project"
+              data-aos="flip-left" 
+              data-aos-easing="ease-out-cubic" 
+              data-aos-duration="2000">
+            <div class="project-image">
+              <img src="pexels-ella-olsson-572949-1640772.jpg" alt="Screenshot of the Food Recipe site">
+            </div>
+            <div class="project-info">
+              <h2>Food Recipe Site</h2>
+              <p>
+                Developed a responsive website that displays recipes from around the world. Implemented clean, interactive,
+                and user-friendly design layouts. Focused on accessibility, interactivity, and cross-browser compatibility.
+              </p>
+            </div>
+          </div>
         </div>
-        <div id="options">
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+      </section>
+    </div>
 
-    <main>
-       
-        <section id="home" data-aos-easing="linear"
-        data-aos-duration="1500">
-            <h2>Hi, Im Sravan Reddy , Welcome to my portfolio website</h2>
-        </section>
+    <!-- Contact Form -->
+    <section id="contact" data-aos="fade-up" data-aos-duration="1500">
+      <h2>Contact Me</h2>
+      <form id="contact-form" onsubmit="validateForm(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
 
-      
-        <section id="about" data-aos-easing="linear"
-        data-aos-duration="1500">
-            <h2>I'm a passionate software developer who enjoys creating innovative and user-friendly solutions through code. 
-                My goal is to build applications that make life easier and more engaging.</h2>
-        </section>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
 
-        
-        <section id="skills" data-aos-easing="linear"
-        data-aos-duration="1500">
-            <ul>
-                <li><b>Web Technologies :</b> HTML , CSS , React, Spring Boot</li>
-                <li><b>Programming Languages </b>Java , Python , Java Script </li>
-                <li><b>Tools & Platforms</b> VS Code , Git , Github , Docker </li>
-            </ul>
-        </section>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
 
-        <div class="projects-wrapper">
-            <section id="projects" 
-                    >
-              <div class="projects-container">
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
 
-                <div class="project"
-                data-aos="flip-left" 
-                data-aos-easing="ease-out-cubic" 
-                data-aos-duration="2000">
-                  <div class="project-image">
-                    <img src="pexels-mikhail-nilov-6981024.jpg" alt="Screenshot of the Java Learning Management System">
-                  </div>
-                  <div class="project-info">
-                    <h2>Learning Management System Using Java</h2>
-                    <p>
-                      Designed and implemented a complete LMS using Java. Integrated multiple Java files for seamless functionality.
-                      Tracks student information, marks, attendance, and subjects. Includes trainer details such as experience,
-                      salary, and number of classes.
-                    </p>
-                  </div>
-                </div>
+  <footer>
+    <p>WhatsApp no- 8309098575</p>
+    <p>Email - hisravan23@gmail.com</p>
+  </footer>
 
-                <div class="project"
-                data-aos="flip-left" 
-                data-aos-easing="ease-out-cubic" 
-                data-aos-duration="2000">
-                  <div class="project-image">
-                    <img src="pexels-ella-olsson-572949-1640772.jpg" alt="Screenshot of the Food Recipe site">
-                  </div>
-                  <div class="project-info">
-                    <h2>Food Recipe Site</h2>
-                    <p>
-                      Developed a responsive website that displays recipes from around the world. Implemented clean, interactive,
-                      and user-friendly design layouts. Focused on accessibility, interactivity, and cross-browser compatibility.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <p id="contact">WhatsApp no- 8309098575</p>
-        <p id="email">Email - hisravan23@gmail.com</p>
-    </footer>
-
-   
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
