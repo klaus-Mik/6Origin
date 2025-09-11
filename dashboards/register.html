@@ -10,30 +10,39 @@
  
   <header id="head">
     <p>Your favorite Dishes, Delivered to you</p>
-    <button id="chef-login" onclick="chef()"> Login as chef</button>
+
   </header>
 
 
   <main id="main">
     <div id="login-box">
       <form id="login-user">
+        <label for="name ">Enter Your First Name</label>
+        <input type="text" id="fname" placeholder="First Name" required>
+
+        <label for="name ">Enter Your Last Name</label>
+        <input type="text" id="lname" placeholder="Last Name" required>
+
         <label for="ph-no">Enter Mobile Number</label>
         <input type="number" id="ph-no" placeholder="Mobile Number" required>
         
         <label for="pass">Enter your password</label>
         <input type="password" id="pass" placeholder="Password" required>
+
+        <label for="pass">Re-Enter your password</label>
+        <input type="password" id="re-pass" placeholder="Password" required>
         
-        <button id="login" type="submit">Login</button>
+        <button id="login" type="submit" onclick="login()">Register</button>
       </form>
+
     </div>
-    <div id="register">
-      <a href="register.html">New User? Click to register</a>
-    </div>
+
+    
   </main>
   <script>
-    var c=document.getElementById("chef-login");
+    var c=document.getElementById("login");
     c.addEventListener("click", function() {
-    window.location.href = "chef.html";
+    window.location.href = "login.html";
   });
   </script>
 
