@@ -32,7 +32,7 @@
         <label for="pass">Re-Enter your password</label>
         <input type="password" id="re-pass" placeholder="Password" required>
         
-        <button id="login" type="submit" onclick="login()">Register</button>
+        <button id="login" type="submit">Register</button>
       </form>
 
     </div>
@@ -42,12 +42,19 @@
   <script>
 
 
+const register = async (userData) => {
+  const response = await fetch('https://wild-ruth-butterfly-charter.trycloudflare.com/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userData)
+  });
+  return response.json();
+};
+
 function validatePassword(password) {
-  
   const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   return regex.test(password);
 }
-
 
 function validateMobile(mobile) {
   const regex = /^\d{10}$/;
@@ -65,19 +72,16 @@ registerForm.addEventListener("submit", async function(event) {
   const password = document.getElementById("pass").value;
   const rePass = document.getElementById("re-pass").value;
 
-  
   if (!validateMobile(mobile)) {
-    alert("Enter valid mobile number");
+    alert("Enter valid 10-digit mobile number");
     return;
   }
-
 
   if (password !== rePass) {
     alert("Passwords do not match!");
     return;
   }
 
-  
   if (!validatePassword(password)) {
     alert("Password must be at least 8 characters long, include 1 uppercase letter, 1 number, and 1 special character.");
     return;
@@ -92,8 +96,6 @@ registerForm.addEventListener("submit", async function(event) {
 
   try {
     const result = await register(userData); 
-    console.log("Server response:", result);
-
     if (result.success) {
       alert("Registration successful!");
       window.location.href = "login.html";
@@ -101,13 +103,9 @@ registerForm.addEventListener("submit", async function(event) {
       alert("Registration failed: " + result.message);
     }
   } catch (error) {
-    console.error("Error:", error);
     alert("Something went wrong!");
   }
 });
-
-
-
   </script>
 
  
