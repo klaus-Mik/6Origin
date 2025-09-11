@@ -40,10 +40,74 @@
     
   </main>
   <script>
-    var c=document.getElementById("login");
-    c.addEventListener("click", function() {
-    window.location.href = "login.html";
-  });
+
+
+function validatePassword(password) {
+  
+  const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return regex.test(password);
+}
+
+
+function validateMobile(mobile) {
+  const regex = /^\d{10}$/;
+  return regex.test(mobile);
+}
+
+const registerForm = document.getElementById("login-user");
+
+registerForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const fname = document.getElementById("fname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const mobile = document.getElementById("ph-no").value.trim();
+  const password = document.getElementById("pass").value;
+  const rePass = document.getElementById("re-pass").value;
+
+  
+  if (!validateMobile(mobile)) {
+    alert("Enter valid mobile number");
+    return;
+  }
+
+
+  if (password !== rePass) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  
+  if (!validatePassword(password)) {
+    alert("Password must be at least 8 characters long, include 1 uppercase letter, 1 number, and 1 special character.");
+    return;
+  }
+
+  const userData = {
+    firstName: fname,
+    lastName: lname,
+    mobile: mobile,
+    password: password
+  };
+
+  try {
+    const result = await register(userData); 
+    console.log("Server response:", result);
+
+    if (result.success) {
+      alert("Registration successful!");
+      window.location.href = "login.html";
+    } else {
+      alert("Registration failed: " + result.message);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong!");
+  }
+});
+
+
+
   </script>
 
  
